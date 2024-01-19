@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  transition: 0.5s;
+  user-select: none;
+}
+.dropdown {
+  margin-top: 100px;
+  height: fit-content;
+  position: relative;
+}
+.dropdown::before {
+  content: "";
+  width: 12px;
+  height: 2px;
+  background-color: #777;
+  position: absolute;
+  right: 30px;
+  top: 25px;
+  transform: rotate(40deg);
+  transition: 0.5s;
+}
+.active.dropdown::before {
+  transform: rotate(-50deg);
+}
+.dropdown::after {
+  content: "";
+  width: 12px;
+  height: 2px;
+  background-color: #777;
+  position: absolute;
+  right: 22px;
+  top: 25px;
+  transform: rotate(-40deg);
+  transition: 0.5s;
+}
+.active.dropdown::after {
+  transform: rotate(50deg);
+}
+.dropdown input {
+  width: 300px;
+  height: 50px;
+  background-color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0 5px 20px #ddd;
+}
+.dropdown input:focus {
+  outline: none;
+}
+.opation {
+  background-color: white;
+  margin-top: 20px;
+  box-shadow: 0 5px 20px #ddd;
+  border-radius: 30px;
+  display: none;
+  transition: 0.7s;
+  overflow: hidden;
+}
+.active.dropdown .opation {
+  display: block;
+}
+.opation div {
+  padding: 15px;
+  text-transform: capitalize;
+}
+.opation div:hover {
+  background-color: #2aee5f;
+}
